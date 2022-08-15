@@ -8,20 +8,46 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/d78df47158.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
     <header>
-
+        <img src="./images/logo-alura.svg" alt="Alura - Logo">
     </header>
-
+    
     <main>
+        <form class="contenedorIngreso">
+            <textarea name="textToTranslate" id="textToTranslate" placeholder="Ingrese el texto aquí"></textarea>
 
+            <span class="contenedorIngresoTexto">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                Solo letras minúsculas y sin acentos.
+            </span>
+
+            <div class="contenedorIngresoBotones">
+                <button id="botonEncriptar"> Encriptar </button>
+
+                <button id="botonDesencriptar"> Desencriptar </button>
+
+                <i class="fa-solid fa-rotate" id="botonReinicio"></i>
+            </div>
+        </form>
+
+        <div class="contenedorResultado">
+            <img src="./images/imagen-ingreso-vacio.svg" alt="Imagen - Ingreso vacío" class="imagenIngresoVacio">
+            <div class="cartelIngresoVacio">
+                <span class="cartelIngresoVacioSup">Ningún mensaje fue encontrado</span>
+                <span class="cartelIngresoVacioInf">Ingresa el texto que desees encriptar o desencriptar</span>
+            </div>
+        </div>
     </main>
 
     <footer>
-
+        <p>Juan Manuel Gutierrez Monaco - Desarrollado para el programa ONE de Oracle en conjunto con Alura LATAM - 2022</p>
     </footer>
 
     <!-- JS -->
