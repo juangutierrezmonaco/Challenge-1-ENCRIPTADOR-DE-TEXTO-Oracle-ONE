@@ -8,6 +8,7 @@
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
     font-style: normal;
+    line-height: 150%;
 }
 
 body {
@@ -19,12 +20,32 @@ body {
     justify-content: space-between;
 }
 
+button {
+    cursor:pointer;
+}
+
 button:hover {
     opacity: 80%;
 }
 
 button:focus {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+	color: inherit;
+}  
+
+a:hover {
+    color: inherit;
+}
+
+textarea {
+    border: none;
+    background-color: transparent;
+    resize: none;
     outline: none;
 }
 
@@ -48,6 +69,7 @@ header > img {
 main {
     width: 100%;
     height: 92vh;
+    min-height: 600px;
     padding: 15px;
     padding-left:10%;
     display: flex;
@@ -65,22 +87,37 @@ main {
     gap: 20px;
 }
 
-#textToTranslate {
+.contenedorIngresoTraducir {
     height: 80%;
-    
+    position: relative;
+}
+
+#textToTranslate {
     color: #0A3871;
     font-weight: 400;
     font-size: 32px;
-    
-    border: none;
-    background-color: transparent;
-    resize: none;
-    outline: none;
+    width: 100%;
+    height: 100%;
 }
 
 #textToTranslate::placeholder {
     color: rgba(10, 56, 113, .6);
 }
+
+#botonPegar {
+    font-size: 1rem;
+    background-color: black;
+    color: white;
+    width: fit-content;
+    padding: 10px;
+
+    border: none;
+    border-radius: 100%;
+
+    position: absolute;
+    right: 25px;
+    bottom: 5px;
+} 
 
 .contenedorIngresoTexto {
     font-weight: 400;
@@ -104,7 +141,6 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor:pointer;
 }
 
 #botonEncriptar {
@@ -120,11 +156,15 @@ main {
 }
 
 #botonReinicio {
-    color: #0A3871;
+    color: white;
+    background-color: #609ED4;
     font-size: 1.5rem;
+    border: none;
+    width: fit-content;
+    padding: 10px;
 }
 
-.contenedorResultado {
+.contenedorResultadoVacio {
     width: 30%;
     height: 100%;
     padding: 20px;
@@ -158,13 +198,53 @@ main {
     color: #495057;
 }
 
+.contenedorResultado {
+    width: 30%;
+    height: 100%;
+    padding: 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+
+    display: none;  /* Valor por defecto que se cambia mediante JS */
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cartelIngresoResultado {
+    font-weight: 400;
+    font-size: 24px;
+
+    color: #495057;
+    height: 80%;
+
+    text-align: start;
+}
+
+#botonCopiar {
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    padding: 24px;
+
+    color: #0A3871;
+    background-color: transparent;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+}
+
 /********************************/
 /**           FOOTER           **/
 /********************************/
-footer {
+footer > p{
     color: white;
     background-color: #0A3871;
     font-size: 1.5rem;
-    text-align: center;
     padding: 10px;
+    text-align: center;
 }
+
+/* Animaciones -- Animista */
+.shake-horizontal{animation:shake-horizontal .8s cubic-bezier(.455,.03,.515,.955) both}
+@keyframes shake-horizontal{0%,100%{transform:translateX(0)}10%,30%,50%,70%{transform:translateX(-10px)}20%,40%,60%{transform:translateX(10px)}80%{transform:translateX(8px)}90%{transform:translateX(-8px)}}

@@ -14,18 +14,21 @@
 </head>
 
 <body>
-
+    
     <header>
         <img src="./images/logo-alura.svg" alt="Alura - Logo">
     </header>
     
     <main>
         <form class="contenedorIngreso">
-            <textarea name="textToTranslate" id="textToTranslate" placeholder="Ingrese el texto aquí"></textarea>
-
+            <div class="contenedorIngresoTraducir">
+                <textarea name="textToTranslate" id="textToTranslate" placeholder="Ingrese el texto aquí"></textarea>
+                <button id="botonPegar" type="button"><i class="fa-solid fa-paste"></i></button>
+            </div>
+            
             <span class="contenedorIngresoTexto">
                 <i class="fa-solid fa-circle-exclamation"></i>
-                Solo letras minúsculas y sin acentos.
+                Sólo letras minúsculas y sin acentos. Al menos una letra.   
             </span>
 
             <div class="contenedorIngresoBotones">
@@ -33,24 +36,35 @@
 
                 <button id="botonDesencriptar"> Desencriptar </button>
 
-                <i class="fa-solid fa-rotate" id="botonReinicio"></i>
+                <button id="botonReinicio"><i class="fa-solid fa-rotate"></i></button>
             </div>
         </form>
 
-        <div class="contenedorResultado">
+        <div class="contenedorResultadoVacio">
             <img src="./images/imagen-ingreso-vacio.svg" alt="Imagen - Ingreso vacío" class="imagenIngresoVacio">
             <div class="cartelIngresoVacio">
                 <span class="cartelIngresoVacioSup">Ningún mensaje fue encontrado</span>
                 <span class="cartelIngresoVacioInf">Ingresa el texto que desees encriptar o desencriptar</span>
             </div>
         </div>
+
+        <form class="contenedorResultado">
+            <textarea readonly class="cartelIngresoResultado"></textarea>
+            <button id="botonCopiar"> Copiar <i class="fa-solid fa-copy"></i></button>
+        </form>
     </main>
 
     <footer>
-        <p>Juan Manuel Gutierrez Monaco - Desarrollado para el programa ONE de Oracle en conjunto con Alura LATAM - 2022</p>
+        <p>
+            Juan Manuel Gutierrez Monaco - Desarrollado para el programa ONE de Oracle en conjunto con Alura LATAM - 2022
+            <i class="fa-solid fa-grip-lines-vertical"></i>
+            <a href="https://www.linkedin.com/in/juangutierrezmonaco/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/juangutierrezmonaco" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+        </p>
     </footer>
 
     <!-- JS -->
     <script src="./js/index.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
