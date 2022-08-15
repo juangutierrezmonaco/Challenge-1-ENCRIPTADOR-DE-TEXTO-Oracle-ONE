@@ -44,6 +44,7 @@ function cambiarCartelesResultado (textoProcesado = "") {
     let contenedorResultadoVacio = document.querySelector(".contenedorResultadoVacio");
 
     if (textoProcesado == ""){  // Si no se pasa parámetro es porque se quiere volver al cartel vacío
+        contenedorResultado.querySelector(".cartelIngresoResultado").value = "";
         contenedorResultado.style.display = "none";
         contenedorResultadoVacio.style.display = "flex";
     } else {    // Sino, estoy encriptando o desencriptando algo
@@ -92,6 +93,13 @@ formTextoIngresado.addEventListener("submit", (e) => {
         }
     }
 });
+
+let textArea = document.querySelector("#textToTranslate");
+textArea.addEventListener("input", (e) => {
+    if (e.target.value.length == 0) {
+        cambiarCartelesResultado();
+    }
+})
 
 function mostrarAlerta(texto, icono = "success") {
     const Toast = Swal.mixin({

@@ -248,3 +248,86 @@ footer > p{
 /* Animaciones -- Animista */
 .shake-horizontal{animation:shake-horizontal .8s cubic-bezier(.455,.03,.515,.955) both}
 @keyframes shake-horizontal{0%,100%{transform:translateX(0)}10%,30%,50%,70%{transform:translateX(-10px)}20%,40%,60%{transform:translateX(10px)}80%{transform:translateX(8px)}90%{transform:translateX(-8px)}}
+
+/********************************/
+/**       MEDIA QUERIES        **/
+/********************************/
+@media screen and (max-width: 768px) {      /* Tablet */
+    /* Header */
+    header {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding-top: 50px;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    header img {
+        width: 20%;
+    }
+
+    /* Main */
+    .imagenIngresoVacio {
+        display: none;
+    }
+    
+    main {
+        flex-direction: column;
+        padding: 20px;
+        min-height: 100vh;
+    }
+
+    .contenedorIngreso{
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .contenedorResultadoVacio {
+        width: 100%;
+        height: 30%;
+    }
+
+    .contenedorResultado {
+        width: 100%;
+        height: 30%;
+    }
+}
+
+
+@media screen and (max-width: 425px) {      /* Celular */
+    header {
+        padding: 10px 0px;
+    }
+
+    header img {
+        width: 30%;
+    }
+    
+    main {
+        flex-direction: column;
+        padding: 20px;
+        height: fit-content;
+        gap: 60px;
+    }
+
+    .contenedorIngreso{
+        padding: 0;
+        margin-top: 20px;
+        overflow: hidden;
+    }
+
+    #textToTranslate {
+        min-height: 500px;
+    }
+
+    .contenedorResultado {
+        width: 100%;
+        min-height: fit-content;
+    }
+
+    .contenedorResultado > textarea {
+        min-height: 500px;
+    }
+}
