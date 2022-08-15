@@ -44,7 +44,7 @@ function cambiarCartelesResultado (textoProcesado = "") {
     let contenedorResultadoVacio = document.querySelector(".contenedorResultadoVacio");
 
     if (textoProcesado == ""){  // Si no se pasa parámetro es porque se quiere volver al cartel vacío
-        contenedorResultado.querySelector(".cartelIngresoResultado").value = "";
+        contenedorResultado.querySelector(".cartelIngresoResultado").innerText = "";
         contenedorResultado.style.display = "none";
         contenedorResultadoVacio.style.display = "flex";
     } else {    // Sino, estoy encriptando o desencriptando algo
